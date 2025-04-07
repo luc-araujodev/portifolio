@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./img/public/favicon.svg" type="img/svg+xml">
+    <title>Lucas Araújo</title>
+</head>
+
+<body>
+
+    <div class="particles"></div>
+    <nav class="navegation">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Início</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="#contatos" class="menu-link">Contato</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="inicio" class="header">
+        <div>
+            <img src="./img/1-photo.jpg" alt="Photo Lucas Araujo" class="photo-profile">
+            <h1>Lucas Araújo</h1>
+            <p class="header-sub-title">Desenvolvedor Front End</p>
+        </div>
+    </main>
+
+    <section id="sobre" class="about">
+        <h2 class="about-title">Sobre Mim</h2>
+        <div class="about-box">
+            <p class="about-paragraph">
+                Olá! Sou Lucas Araújo, desenvolvedor front-end apaixonado por criar interfaces modernas, funcionais e
+                impactantes. Trabalho com as tecnologias mais atuais, focando em performance, design e experiência do
+                usuário. Meu objetivo é transformar ideias em soluções digitais incríveis e memoráveis.
+            </p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projects">
+        <h2 class="projects-title">Meus Projetos</h2>
+
+        <div class="projects-box">
+            <div class="projects-card">
+                <img src="./img/music-page.png" alt="Projeto 1" class="projects-image">
+
+                <div class="box-text-projects">
+                    <h3 class="info-projects">Site de Música (Spotify - Cópia)</h3>
+                    <p class="paragraph-projects">Desenvolvi o Music \ LA, uma réplica funcional do Spotify, com
+                        interface
+                        responsiva que permite explorar os artistas, álbuns, criar playlists e descobrir podcasts,
+                        visando
+                        aprimorar minhas habilidades em desenvolvimento front-end.</p>
+                </div>
+            </div>
+
+            <div class="projects-card">
+                <img src="./img/coffee-page.png" alt="Projeto 2" class="projects-image">
+                <div class="box-text-projects">
+                    <h3 class="info-projects">Site de uma Cafetería</h3>
+                    <p class="paragraph-projects">​Desenvolvi o "Coffee Page", uma landing page responsiva para uma
+                        cafeteria
+                        fictícia, destacando produtos e depoimentos de clientes, visando aprimorar minhas habilidades em
+                        desenvolvimento front-end.</p>
+                </div>
+            </div>
+
+            <div class="projects-card">
+                <img src="./img/microsoft-page.png" alt="Projeto 3" class="projects-image">
+                <div class="box-text-projects">
+                    <h3 class="info-projects">Microsoft (Microsoft - Cópia)</h3>
+                    <p class="paragraph-projects">​Desenvolvi uma réplica responsiva do site da Microsoft, destacando
+                        produtos
+                        como Copilot, Microsoft 365, Xbox e Windows 11. Com Carrossel de imagens e cards. Visando
+                        aprimorar
+                        minhas habilidades em desenvolvimento front-end. </p>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </section>
+
+    <section id="contatos" class="contacts">
+        <h2 class="contacts-title">Entre em Contato</h2>
+        <form class="form-contact" id="formulario" onsubmit="sentWhats(event)">
+            <div class="group-form">
+                <input placeholder="Nome" class="text-form" id="name">
+            </div>
+            <div class="group-form">
+                <textarea class="text-form" placeholder="Digite sua mensagem" rows="6" id="message"></textarea>
+            </div>
+
+            <button type="submit" class="button-form">Enviar WhatsApp</button>
+        </form>
+    </section>
+
+    <script>
+        function sentWhats(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const message = document.getElementById('message').value;
+            const phone = '5581999836164';
+
+            const text = `Olá, Lucas! Me chamo ${name}, ${message}`;
+            const messageFormatted = encodeURIComponent(text);
+
+            const url = `https://wa.me/${phone}?text=${messageFormatted}`;
+
+            console.log(url);
+
+            window.open(url, '_blank');
+        }
+
+    </script>
+</body>
+
+</html>
